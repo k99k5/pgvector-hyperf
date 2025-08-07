@@ -1,6 +1,6 @@
 <?php
 
-namespace Pgvector\Laravel;
+namespace Pgvector\Hyperf;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\ColumnDefinition;

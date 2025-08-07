@@ -1,9 +1,8 @@
 <?php
 
-namespace Pgvector\Laravel;
+namespace Pgvector\hyperf;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\MissingAttributeException;
+use Hyperf\Database\Query\Builder;
 
 trait HasNeighbors
 {
@@ -48,7 +47,7 @@ trait HasNeighbors
     {
         $id = $this->getKey();
         if (!array_key_exists($column, $this->attributes)) {
-            throw new MissingAttributeException($this, $column);
+	        throw new \Hyperf\Database\Exception\InvalidArgumentException($this, $column);
         }
         $value = $this->getAttributeValue($column);
         return static::whereKeyNot($id)->nearestNeighbors($column, $value, $distance);

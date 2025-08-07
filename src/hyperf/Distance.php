@@ -1,6 +1,6 @@
 <?php
 
-namespace Pgvector\Laravel;
+namespace Pgvector\Hyperf;
 
 enum Distance
 {

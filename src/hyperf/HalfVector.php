@@ -1,20 +1,15 @@
 <?php
 
-namespace Pgvector\Laravel;
+namespace Pgvector\Hyperf;
 
-use Illuminate\Contracts\Database\Eloquent\Castable;
-use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
-use Illuminate\Database\Eloquent\Model;
+use Hyperf\Contract\Castable;
+use Hyperf\Contract\CastsAttributes;
 
 class HalfVector extends \Pgvector\HalfVector implements Castable
 {
-    public static function castUsing(array $arguments): CastsAttributes
+	public static function castUsing(): CastsAttributes
     {
-        return new class ($arguments) implements CastsAttributes {
-            public function __construct(array $arguments)
-            {
-                // no need for dimensions
-            }
+	    return new class implements CastsAttributes {
 
             public function get(mixed $model, string $key, mixed $value, array $attributes): ?HalfVector
             {
