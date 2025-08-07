@@ -1,6 +1,6 @@
 <?php
 
-namespace Pgvector\hyperf;
+namespace Pgvector\Hyperf;
 
 use Hyperf\Database\Query\Builder;
 
