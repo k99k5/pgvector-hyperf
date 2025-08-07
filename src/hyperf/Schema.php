@@ -2,9 +2,10 @@
 
 namespace Pgvector\Hyperf;
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Schema\ColumnDefinition;
-use Illuminate\Database\Schema\Grammars\PostgresGrammar;
+
+use Hyperf\Database\PgSQL\Schema\Grammars\PostgresGrammar;
+use Hyperf\Database\Schema\Blueprint;
+use Hyperf\Database\Schema\ColumnDefinition;
 
 class Schema
 {
