@@ -14,7 +14,7 @@ class ConfigProvider
 			    [
 				    'id' => 'migration',
 				    'description' => 'The config of migration.',
-				    'source' => __DIR__ . '/../Migrations/2022_08_03_000000_create_vector_extension.php',
+				    'source' => __DIR__ . '/Migrations/2022_08_03_000000_create_vector_extension.php',
 				    'destination' => BASE_PATH . '/migrations/2022_08_03_000000_create_vector_extension.php',
 			    ],
 		    ],
