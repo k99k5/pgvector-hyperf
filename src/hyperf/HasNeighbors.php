@@ -9,8 +9,10 @@ use Hyperf\Database\Query\Builder;
 /**
  * @method static nearestNeighbors(string $column, mixed $value, Distance $distance)
  */
-trait HasNeighbors {
-    public function scopeNearestNeighbors(\Hyperf\Database\Model\Builder|\Hyperf\Database\Model\Builder $query, string $column, mixed $value, Distance $distance): void {
+trait HasNeighbors
+{
+    public function scopeNearestNeighbors(\Hyperf\Database\Model\Builder|Builder $query, string $column, mixed $value, Distance $distance): void
+    {
         $op = match ($distance) {
             Distance::L2 => '<->',
             Distance::InnerProduct => '<#>',
@@ -33,7 +35,8 @@ trait HasNeighbors {
             ->orderByRaw($order, [$vector]);
     }
     
-    public function nearestNeighbors(string $column, Distance $distance): \Hyperf\Database\Model\Builder {
+    public function nearestNeighbors(string $column, Distance $distance): \Hyperf\Database\Model\Builder
+    {
         $id = $this->getKey();
         if (!array_key_exists($column, $this->attributes)) {
             throw new \Hyperf\Database\Exception\InvalidArgumentException($this, $column);
