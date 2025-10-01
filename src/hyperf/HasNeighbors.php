@@ -10,7 +10,7 @@ use Hyperf\Database\Query\Builder;
  * @method static nearestNeighbors(string $column, mixed $value, Distance $distance)
  */
 trait HasNeighbors {
-    public function scopeNearestNeighbors(\Hyperf\Database\Model\Builder $query, string $column, mixed $value, Distance $distance): void {
+    public function scopeNearestNeighbors(\Hyperf\Database\Model\Builder|\Hyperf\Database\Model\Builder $query, string $column, mixed $value, Distance $distance): void {
         $op = match ($distance) {
             Distance::L2 => '<->',
             Distance::InnerProduct => '<#>',
